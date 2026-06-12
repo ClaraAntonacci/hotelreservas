@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Reservas</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+     
+
+        <div class="sidebar">
+
+            <div class="logo">
+                Hotel Reservas
+            </div>
+
+            <div class="menu">
+                <a href="#" onclick="mostrarQuartos()">Quartos</a>
+                <a href="#" onclick="mostrarCadastroQuarto()">Cadastrar Quarto</a>
+            </div>
+
+        </div>
+
+    
+
+        <div class="content">
+
+            
+
+            <div id="telaQuartos">
+
+                <div class="header">
+                    <h2>Lista de Quartos</h2>
+                </div>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Número</th>
+                            <th>Tipo</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaQuartos"></tbody>
+
+                </table>
+
+            </div>
+
+
+            <div id="telaCadastroQuarto" class="oculto">
+
+                <button class="voltar" onclick="mostrarQuartos()">
+                    ← Voltar
+                </button>
+
+                <h2>Novo Quarto</h2>
+
+                <input
+                    type="text"
+                    id="numero"
+                    placeholder="Número do quarto">
+
+                <select id="tipo">
+                    <option>Standard</option>
+                    <option>Luxo</option>
+                    <option>Suite</option>
+                </select>
+
+                <button onclick="cadastrarQuarto()">
+                    Salvar Quarto
+                </button>
+
+            </div>
+
+
+            <div id="telaReservas" class="oculto">
+
+                <div class="header">
+
+                    <button class="voltar" onclick="mostrarQuartos()">
+                        ← Voltar
+                    </button>
+
+                    <h2>Reservas do Quarto</h2>
+
+                    <button onclick="mostrarCadastroReserva()">
+                        Nova Reserva
+                    </button>
+
+                </div>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Hóspede</th>
+                            <th>Data Entrada</th>
+                            <th>Data Saída</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaReservas"></tbody>
+
+                </table>
+
+            </div>
+
+
+            <div id="telaCadastroReserva" class="oculto">
+
+                <button
+                    class="voltar"
+                    onclick="verReservas(quartoSelecionado)">
+                    ← Voltar
+                </button>
+
+                <h2>Nova Reserva</h2>
+
+                <input
+                    type="text"
+                    id="hospede"
+                    placeholder="Nome do hóspede">
+
+                <label>Data de Entrada</label>
+
+                <input
+                    type="date"
+                    id="entrada">
+
+                <label>Data de Saída</label>
+
+                <input
+                    type="date"
+                    id="saida">
+
+                <button onclick="cadastrarReserva()">
+                    Salvar Reserva
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
